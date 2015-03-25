@@ -61,10 +61,10 @@ public class ConverterByteArrayToHexString {
         int index = 0;
 
         for ( byte each_byte : ByteArray ) {
-            int v = each_byte & 0xFF;
-            HexBytes[index++] = HEX_CHAR_TABLE[v >>> 4];
-            HexBytes[index++] = HEX_CHAR_TABLE[v & 0xF];
+            HexBytes[index++] = HEX_CHAR_TABLE[ ((int)each_byte & 0xFF) >>> 4];
+            HexBytes[index++] = HEX_CHAR_TABLE[ ((int)each_byte & 0xFF) & 0xF];
         }
+
         return new String(HexBytes, "ASCII");
     }
     /* END Method 5 */
